@@ -16,16 +16,14 @@
 		
 		//Sidebar section Changer detecting the window height
 		/* function currentLink() { */
-			/* let links = document.querySelectorAll('.menu__secclink');
+			/* let links = document.querySelectorAll('.menu a');
 			let currentlink;
-			var skillsSection = document.querySelector('#skills');
-			
 			
 			for (let i = 0; i < links.length; i++) {
 				links[i].classList.remove("currentlink");
 			} */
 
-			/* if(window.innerWidth >= 1150) {
+			/* if(window.innerWidth >= 700) {
 
 				if (window.scrollY >= 0 && window.scrollY <= 1300) {
 					currentlink = document.querySelector('.menu__sections a:first-child');
@@ -66,12 +64,12 @@
 					currentlink = document.querySelector('.menu__sections a:nth-child(4)');
 					currentlink.classList.add("currentlink");
 				}
-			}
+			} */
 
-			else if (window.innerWidth <= 700) {
+			/* else if (window.innerWidth <= 700) {
 				return;
 			} */
-	/* 	} */
+		/* } */
 
 		/* function changeColorMenu() {
 			const element = document.querySelector('.menu').classList;

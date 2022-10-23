@@ -734,6 +734,9 @@ button:focus {
     position: sticky;
     height: auto;
     background: #333;
+    /* .currentlink {
+		background: none;
+	} */
   }
   .menu .menu--extended {
     height: auto;
@@ -747,9 +750,6 @@ button:focus {
   }
   .menu .menu__responsivebtn {
     display: block;
-  }
-  .menu .currentlink {
-    background: none;
   }
   .menu .menu__sections {
     display: block;
@@ -1267,6 +1267,10 @@ button:focus {
   border: 1px solid #ccc;
   padding: 0.5em;
   width: 100%;
+}
+.wpcf7-form select {
+  background: url("../img/circle-arrow-down-solid.svg") no-repeat 98% center;
+  background-size: 20px 20px;
 }
 .wpcf7-form input[type=checkbox],
 .wpcf7-form input[type=radio] {
