@@ -667,6 +667,7 @@ button:focus {
 }
 .menu .currentlink {
   background: rgba(0, 0, 0, 0.7);
+  color: red;
 }
 .menu .menu__sections {
   display: flex;

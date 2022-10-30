@@ -15,36 +15,36 @@
 		}
 		
 		//Sidebar section Changer detecting the window height
-		/* function currentLink() { */
-			/* let links = document.querySelectorAll('.menu a');
-			let currentlink;
-			
-			for (let i = 0; i < links.length; i++) {
-				links[i].classList.remove("currentlink");
-			} */
+		function currentLink() {
+			let links = document.querySelectorAll('.menu li');
+			let actuallink = null;
 
-			/* if(window.innerWidth >= 700) {
-
-				if (window.scrollY >= 0 && window.scrollY <= 1300) {
-					currentlink = document.querySelector('.menu__sections a:first-child');
-					currentlink.classList.add("currentlink");
+			function applyCurrentLink(theLink) {
+				let actuallink = document.querySelector(theLink);
+				for (let i = 0; i < links.length; i++) {
+					links[i].classList.remove("currentlink");
 				}
+				actuallink.classList.add("currentlink");
+			}
 
-
-				else if (skillsSection.scrollTop <= 0 ) {
-					currentlink = document.querySelector('.menu__sections a:nth-child(2)');
-					currentlink.classList.add("currentlink");
+			if(window.innerWidth >= 700) {
+				if (window.scrollY >= 0 && window.scrollY <= 399) {
+					applyCurrentLink('.menu li:nth-child(2)');
 				}
-
-				else if (window.scrollY >= 2501 && window.scrollY <= 5400) {
-					currentlink = document.querySelector('.menu__sections a:nth-child(3)');
-					currentlink.classList.add("currentlink");
+				else if (window.scrollY >= 400 && window.scrollY <= 1900) {
+					applyCurrentLink('.menu li:nth-child(3)');
 				}
-				else if (window.scrollY >= 5401) {
-					currentlink = document.querySelector('.menu__sections a:nth-child(4)');
-					currentlink.classList.add("currentlink");
+				else if (window.scrollY >= 1901 && window.scrollY <= 3399) {
+					applyCurrentLink('.menu li:nth-child(4)');
 				}
-			}  */
+				else if (window.scrollY >= 3400 && window.scrollY <= 6759) {
+					applyCurrentLink('.menu li:nth-child(5)');
+				}
+				/* else if (window.scrollY >= 6800 && window.scrollY <= 9000) { */
+				else {
+					applyCurrentLink('.menu li:nth-child(6)');
+				}
+			}
 			
 			/* else if (window.innerWidth >= 701 && window.innerWidth <= 1149) {
 
@@ -69,7 +69,7 @@
 			/* else if (window.innerWidth <= 700) {
 				return;
 			} */
-		/* } */
+		}
 
 		/* function changeColorMenu() {
 			const element = document.querySelector('.menu').classList;
@@ -81,7 +81,7 @@
 				return;
 			}
 		} */
-
+		//Listener for showing to top button
 		function showTopButton() {
 			const topButton = document.querySelector('.footer__topbtn').classList;
 			if(window.scrollY >= 600) {
@@ -106,16 +106,15 @@
 
 		//Listener to detect window scroll
 		window.onscroll = function () {
-/* 			currentLink();
-			changeColorMenu(); */
+			currentLink();
 			showTopButton();
-			/* console.log(skillsSection.scrollTop); */
+			console.log(window.scrollY );
 		};
 
 		//Listener to detect when user resizes the window
 		window.onresize = function () {
-		/* 	changeColorMenu();
-			currentLink(); */
+			currentLink();
 			showTopButton();
 		}
 
+		currentLink();
