@@ -81,6 +81,7 @@
 				return;
 			}
 		} */
+		
 		//Listener for showing to top button
 		function showTopButton() {
 			const topButton = document.querySelector('.footer__topbtn').classList;
