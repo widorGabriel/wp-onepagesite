@@ -24,73 +24,99 @@ function menuResponsive() {
   }
 } //Sidebar section Changer detecting the window height
 
+/* 		function currentLink() {
+			let links = document.querySelectorAll('.menu li');
+			let actuallink = null;
 
-function currentLink() {
-  var links = document.querySelectorAll('.menu li');
-  var actuallink = null;
+			function applyCurrentLink(theLink) {
+				let actuallink = document.querySelector(theLink);
+				for (let i = 0; i < links.length; i++) {
+					links[i].classList.remove("currentlink");
+				}
+				actuallink.classList.add("currentlink");
+			}
 
-  function applyCurrentLink(theLink) {
-    var actuallink = document.querySelector(theLink);
+			if(window.innerWidth >= 700) {
+				if (window.scrollY >= 0 && window.scrollY <= 399) {
+					applyCurrentLink('.menu li:nth-child(2)');
+				}
+				else if (window.scrollY >= 400 && window.scrollY <= 1900) {
+					applyCurrentLink('.menu li:nth-child(3)');
+				}
+				else if (window.scrollY >= 1901 && window.scrollY <= 3399) {
+					applyCurrentLink('.menu li:nth-child(4)');
+				}
+				else if (window.scrollY >= 3400 && window.scrollY <= 6759) {
+					applyCurrentLink('.menu li:nth-child(5)');
+				}
+				else {
+					applyCurrentLink('.menu li:nth-child(6)');
+				}
+			} */
 
-    for (var i = 0; i < links.length; i++) {
-      links[i].classList.remove("currentlink");
-    }
+/* else if (window.innerWidth >= 701 && window.innerWidth <= 1149) {
+			if (window.scrollY >= 0 && window.scrollY <= 1700) {
+		currentlink = document.querySelector('.menu__sections a:first-child');
+		currentlink.classList.add("currentlink");
+	}
+	else if (window.scrollY >= 1701 && window.scrollY <= 3000) {
+		currentlink = document.querySelector('.menu__sections a:nth-child(2)');
+		currentlink.classList.add("currentlink");
+	}
+	else if (window.scrollY >= 3001 && window.scrollY <= 6700) {
+		currentlink = document.querySelector('.menu__sections a:nth-child(3)');
+		currentlink.classList.add("currentlink");
+	}
+	else if (window.scrollY >= 6701) {
+		currentlink = document.querySelector('.menu__sections a:nth-child(4)');
+		currentlink.classList.add("currentlink");
+	}
+} */
 
-    actuallink.classList.add("currentlink");
-  }
+/* else if (window.innerWidth <= 700) {
+	return;
+} */
 
-  if (window.innerWidth >= 700) {
-    if (window.scrollY >= 0 && window.scrollY <= 399) {
-      applyCurrentLink('.menu li:nth-child(2)');
-    } else if (window.scrollY >= 400 && window.scrollY <= 1900) {
-      applyCurrentLink('.menu li:nth-child(3)');
-    } else if (window.scrollY >= 1901 && window.scrollY <= 3399) {
-      applyCurrentLink('.menu li:nth-child(4)');
-    } else if (window.scrollY >= 3400 && window.scrollY <= 6759) {
-      applyCurrentLink('.menu li:nth-child(5)');
-    }
-    /* else if (window.scrollY >= 6800 && window.scrollY <= 9000) { */
-    else {
-      applyCurrentLink('.menu li:nth-child(6)');
-    }
-  }
-  /* else if (window.innerWidth >= 701 && window.innerWidth <= 1149) {
-  			if (window.scrollY >= 0 && window.scrollY <= 1700) {
-  		currentlink = document.querySelector('.menu__sections a:first-child');
-  		currentlink.classList.add("currentlink");
-  	}
-  	else if (window.scrollY >= 1701 && window.scrollY <= 3000) {
-  		currentlink = document.querySelector('.menu__sections a:nth-child(2)');
-  		currentlink.classList.add("currentlink");
-  	}
-  	else if (window.scrollY >= 3001 && window.scrollY <= 6700) {
-  		currentlink = document.querySelector('.menu__sections a:nth-child(3)');
-  		currentlink.classList.add("currentlink");
-  	}
-  	else if (window.scrollY >= 6701) {
-  		currentlink = document.querySelector('.menu__sections a:nth-child(4)');
-  		currentlink.classList.add("currentlink");
-  	}
-  } */
+/* } */
 
-  /* else if (window.innerWidth <= 700) {
-  	return;
-  } */
-
-}
 
 function currentSection() {
   var links = document.querySelectorAll('.menu li');
   var sections = document.querySelectorAll('.container section');
   var activeSection = null;
   var activeLink = null;
-  /* console.log(sections); */
 
   for (var i = 0; i < sections.length; i++) {
     var sectionTop = sections[i].getBoundingClientRect().top;
 
-    if (sections[i].sectionTop < 65 && sections[i].sectionTop > -35) {
+    if (sectionTop < 45 && sectionTop > -55) {
       console.log("Section " + i + ": " + sectionTop);
+
+      if (i === 0) {
+        for (var y = 0; y < links.length; y++) {
+          links[y].classList.remove('currentlink');
+        }
+
+        links[2].classList.add('currentlink');
+      } else if (i === 1) {
+        for (var _y = 0; _y < links.length; _y++) {
+          links[_y].classList.remove('currentlink');
+        }
+
+        links[3].classList.add('currentlink');
+      } else if (i === 2) {
+        for (var _y2 = 0; _y2 < links.length; _y2++) {
+          links[_y2].classList.remove('currentlink');
+        }
+
+        links[4].classList.add('currentlink');
+      } else if (i === 3) {
+        for (var _y3 = 0; _y3 < links.length; _y3++) {
+          links[_y3].classList.remove('currentlink');
+        }
+
+        links[5].classList.add('currentlink');
+      }
     }
   }
 }
@@ -120,18 +146,17 @@ anchors.forEach(function (anchor) {
 }); //Listener to detect window scroll
 
 window.onscroll = function () {
-  currentLink();
+  /* currentLink(); */
   showTopButton();
   currentSection();
 }; //Listener to detect when user resizes the window
 
 
 window.onresize = function () {
-  currentLink();
+  /* currentLink(); */
   showTopButton();
 };
-
-currentLink();
+/* currentLink(); */
 
 /***/ }),
 

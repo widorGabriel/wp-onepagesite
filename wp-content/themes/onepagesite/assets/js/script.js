@@ -16,7 +16,7 @@
 		}
 		
 		//Sidebar section Changer detecting the window height
-		function currentLink() {
+/* 		function currentLink() {
 			let links = document.querySelectorAll('.menu li');
 			let actuallink = null;
 
@@ -41,11 +41,10 @@
 				else if (window.scrollY >= 3400 && window.scrollY <= 6759) {
 					applyCurrentLink('.menu li:nth-child(5)');
 				}
-				/* else if (window.scrollY >= 6800 && window.scrollY <= 9000) { */
 				else {
 					applyCurrentLink('.menu li:nth-child(6)');
 				}
-			}
+			} */
 			
 			/* else if (window.innerWidth >= 701 && window.innerWidth <= 1149) {
 
@@ -70,19 +69,39 @@
 			/* else if (window.innerWidth <= 700) {
 				return;
 			} */
-		}
+		/* } */
 
 		function currentSection() {
 			let links = document.querySelectorAll('.menu li');
 			let sections = document.querySelectorAll('.container section');
 			let activeSection = null;
 			let activeLink = null;
-			/* console.log(sections); */
+
 			for (let i = 0; i < sections.length; i++) {
 				let sectionTop = sections[i].getBoundingClientRect().top;
-				
-				if(sections[i].sectionTop < 65 && sections[i].sectionTop > -35 ) {
+				if(sectionTop < 45 && sectionTop > -55 ) {
 					console.log("Section " + i +": " + sectionTop);
+					if(i === 0) {
+						for (let y = 0; y < links.length; y++) {
+							links[y].classList.remove('currentlink');
+						}
+						links[2].classList.add('currentlink');
+					} else if(i === 1) {
+						for (let y = 0; y < links.length; y++) {
+							links[y].classList.remove('currentlink');
+						}
+						links[3].classList.add('currentlink');
+					} else if(i === 2) {
+						for (let y = 0; y < links.length; y++) {
+							links[y].classList.remove('currentlink');
+						}
+						links[4].classList.add('currentlink');
+					} else if(i === 3) {
+						for (let y = 0; y < links.length; y++) {
+							links[y].classList.remove('currentlink');
+						}
+						links[5].classList.add('currentlink');
+					}
 				}
 			}
 		}
@@ -114,15 +133,15 @@
 
 		//Listener to detect window scroll
 		window.onscroll = function () {
-			currentLink();
+			/* currentLink(); */
 			showTopButton();
 			currentSection();
 		};
 
 		//Listener to detect when user resizes the window
 		window.onresize = function () {
-			currentLink();
+			/* currentLink(); */
 			showTopButton();
 		}
 
-		currentLink();
+		/* currentLink(); */
