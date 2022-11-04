@@ -1,6 +1,7 @@
 		//Constants for menu buttons (used for addEventListener menuResponsive())
 		const menuIconBtn = document.querySelector('.menu__responsivebtn');
 		const anchors = document.querySelectorAll('.menu li:not(:first-child)');
+
 		
 		/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 		function menuResponsive() {
@@ -71,16 +72,22 @@
 			} */
 		}
 
-		/* function changeColorMenu() {
-			const element = document.querySelector('.menu').classList;
-			if (window.innerWidth >= 700 && window.scrollY >= 600) {
-				element.add('menu--dark');
+		function currentSection() {
+			let links = document.querySelectorAll('.menu li');
+			let sections = document.querySelectorAll('.container section');
+			let activeSection = null;
+			let activeLink = null;
+			/* console.log(sections); */
+			for (let i = 0; i < sections.length; i++) {
+				let sectionTop = sections[i].getBoundingClientRect().top;
+				
+				if(sections[i].sectionTop < 65 && sections[i].sectionTop > -35 ) {
+					console.log("Section " + i +": " + sectionTop);
+				}
 			}
-			else {
-				element.remove('menu--dark');
-				return;
-			}
-		} */
+		}
+
+		currentSection();
 		
 		//Listener for showing to top button
 		function showTopButton() {
@@ -109,7 +116,7 @@
 		window.onscroll = function () {
 			currentLink();
 			showTopButton();
-			console.log(window.scrollY );
+			currentSection();
 		};
 
 		//Listener to detect when user resizes the window

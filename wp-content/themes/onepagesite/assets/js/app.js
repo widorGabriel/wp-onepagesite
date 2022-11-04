@@ -78,18 +78,24 @@ function currentLink() {
   } */
 
 }
-/* function changeColorMenu() {
-	const element = document.querySelector('.menu').classList;
-	if (window.innerWidth >= 700 && window.scrollY >= 600) {
-		element.add('menu--dark');
-	}
-	else {
-		element.remove('menu--dark');
-		return;
-	}
-} */
-//Listener for showing to top button
 
+function currentSection() {
+  var links = document.querySelectorAll('.menu li');
+  var sections = document.querySelectorAll('.container section');
+  var activeSection = null;
+  var activeLink = null;
+  /* console.log(sections); */
+
+  for (var i = 0; i < sections.length; i++) {
+    var sectionTop = sections[i].getBoundingClientRect().top;
+
+    if (sections[i].sectionTop < 65 && sections[i].sectionTop > -35) {
+      console.log("Section " + i + ": " + sectionTop);
+    }
+  }
+}
+
+currentSection(); //Listener for showing to top button
 
 function showTopButton() {
   var topButton = document.querySelector('.footer__topbtn').classList;
@@ -116,7 +122,7 @@ anchors.forEach(function (anchor) {
 window.onscroll = function () {
   currentLink();
   showTopButton();
-  console.log(window.scrollY);
+  currentSection();
 }; //Listener to detect when user resizes the window
 
 
