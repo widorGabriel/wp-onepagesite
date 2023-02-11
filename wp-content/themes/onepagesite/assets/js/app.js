@@ -146,17 +146,15 @@ anchors.forEach(function (anchor) {
 }); //Listener to detect window scroll
 
 window.onscroll = function () {
-  /* currentLink(); */
-  showTopButton();
   currentSection();
+  showTopButton();
 }; //Listener to detect when user resizes the window
 
 
 window.onresize = function () {
-  /* currentLink(); */
+  currentSection();
   showTopButton();
 };
-/* currentLink(); */
 
 /***/ }),
 

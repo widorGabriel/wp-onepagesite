@@ -71,7 +71,7 @@
 			} */
 		/* } */
 
-		function currentSection() {
+		/* function currentSection() {
 			let links = document.querySelectorAll('.menu li');
 			let sections = document.querySelectorAll('.container section');
 			let activeSection = null;
@@ -104,9 +104,9 @@
 					}
 				}
 			}
-		}
+		} */
 
-		currentSection();
+		/* currentSection(); */
 		
 		//Listener for showing to top button
 		function showTopButton() {
@@ -133,15 +133,12 @@
 
 		//Listener to detect window scroll
 		window.onscroll = function () {
-			/* currentLink(); */
+			/* currentSection(); */
 			showTopButton();
-			currentSection();
 		};
 
 		//Listener to detect when user resizes the window
 		window.onresize = function () {
-			/* currentLink(); */
+			/* currentSection(); */
 			showTopButton();
 		}
-
-		/* currentLink(); */
