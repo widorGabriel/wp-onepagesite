@@ -135,14 +135,12 @@
 				}
 			});
 		});
-
 		//Listener for activate menuResponsive close in all menu links
 		/* anchors.forEach(anchor => {
 			anchor.addEventListener('click', () => {
 				menuResponsive();
 			});
 		}); */
-
 		//Listener to detect window scroll
 		window.onscroll = function () {
 			/* currentSection(); */
