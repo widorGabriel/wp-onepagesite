@@ -683,6 +683,9 @@ button:focus {
   display: inline-block;
 }
 .menu .menu__socialbutton a {
+  display: grid;
+  place-items: center;
+  height: 100%;
   border-bottom: none;
 }
 .menu .menu__dropdown {
@@ -735,9 +738,6 @@ button:focus {
     position: sticky;
     height: auto;
     background: #333;
-    /* .currentlink {
-		background: none;
-	} */
   }
   .menu .menu--extended {
     height: auto;
@@ -779,6 +779,9 @@ button:focus {
   }
   .menu .menu__dropdown-content a {
     padding-left: 3em;
+  }
+  .menu .menu__socialbutton a {
+    height: auto;
   }
 }
 .sub-menu {

@@ -2,7 +2,6 @@
 		const menuIconBtn = document.querySelector('.menu__responsivebtn');
 		const anchors = document.querySelectorAll('.menu li:not(:first-child)');
 
-		
 		/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 		function menuResponsive() {
 			if(window.innerWidth <= 700) {
@@ -120,16 +119,29 @@
 		}
 
 		//Listener for activate menuResponsive in menu icon
-		menuIconBtn.addEventListener('click', function(){
+		/* menuIconBtn.addEventListener('click', function(){
 			menuResponsive();
+		}); */
+		
+		$(document).ready(function () {
+			//Listener for activate menuResponsive in menu icon
+			$(".menu__responsivebtn").click(function () {
+				menuResponsive();
+			});
+			//Listener for activate menuResponsive close in all menu links
+			$(".menulinks").click(function () {
+				if (screen.width < 700) {
+				$("#menu").toggleClass("menu--responsive");
+				}
+			});
 		});
 
 		//Listener for activate menuResponsive close in all menu links
-		anchors.forEach(anchor => {
+		/* anchors.forEach(anchor => {
 			anchor.addEventListener('click', () => {
 				menuResponsive();
 			});
-		});
+		}); */
 
 		//Listener to detect window scroll
 		window.onscroll = function () {
