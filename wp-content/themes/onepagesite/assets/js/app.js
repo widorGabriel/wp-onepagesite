@@ -128,16 +128,30 @@ function showTopButton() {
   }
 } //Listener for activate menuResponsive in menu icon
 
+/* menuIconBtn.addEventListener('click', function(){
+	menuResponsive();
+}); */
 
-menuIconBtn.addEventListener('click', function () {
-  menuResponsive();
+
+$(document).ready(function () {
+  //Listener for activate menuResponsive in menu icon
+  $(".menu__responsivebtn").click(function () {
+    menuResponsive();
+  }); //Listener for activate menuResponsive close in all menu links
+
+  $(".menulinks").click(function () {
+    if (screen.width < 700) {
+      $("#menu").toggleClass("menu--responsive");
+    }
+  });
 }); //Listener for activate menuResponsive close in all menu links
 
-anchors.forEach(function (anchor) {
-  anchor.addEventListener('click', function () {
-    menuResponsive();
-  });
-}); //Listener to detect window scroll
+/* anchors.forEach(anchor => {
+	anchor.addEventListener('click', () => {
+		menuResponsive();
+	});
+}); */
+//Listener to detect window scroll
 
 window.onscroll = function () {
   /* currentSection(); */
