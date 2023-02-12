@@ -11,6 +11,7 @@
 						$facebook = get_sub_field("facebook");
 						$twitter = get_sub_field("twitter");
 						$instagram = get_sub_field("instagram");
+						$github = get_sub_field("github");
 						?>
 
 						<?php if ($facebook) : ?>
@@ -28,6 +29,12 @@
 						<?php if ($instagram) : ?>
 							<a href="<?php echo $instagram; ?>" target="_blank">
 								<i class="fa-brands fa-instagram"></i>
+							</a>
+						<?php endif; ?>
+
+						<?php if ($github) : ?>
+							<a href="<?php echo $github; ?>" target="_blank">
+								<i class="fa-brands fa-github"></i>
 							</a>
 						<?php endif; ?>
 

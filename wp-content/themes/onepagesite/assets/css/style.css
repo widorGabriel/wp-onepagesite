@@ -636,6 +636,10 @@ button:focus {
   .header .header__title {
     width: 75%;
   }
+  .header .header__name {
+    font-size: 4em;
+    line-height: 0.7;
+  }
 }
 .menu {
   font-size: 16px;
@@ -722,12 +726,17 @@ button:focus {
 .menu .menu__responsivebtn {
   display: none;
 }
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1350px) {
   .menu {
     font-size: 12px;
   }
   .menu a {
     padding: 1em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .menu {
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -837,13 +846,21 @@ button:focus {
   width: 80%;
   margin: 4em auto;
 }
+.profile p {
+  margin: 0.5em 0;
+}
 .profile ul {
   list-style-position: inside;
-  padding: 1em;
-  background: rgba(0, 0, 0, 0.1);
-  margin: 1em 0;
+  padding: 0 1em;
+  /* background: rgba(0, 0, 0, 0.1); */
+  margin: 0;
   list-style-type: square;
   border-radius: 0.5em;
+  border: 1px solid #ccc;
+}
+.profile li {
+  margin: 1em 0;
+  list-style: inside disc;
 }
 .profile .profile__photo {
   position: relative;
@@ -893,6 +910,7 @@ button:focus {
   }
   .profile .profile__photo img {
     margin: auto;
+    width: 60%;
   }
 }
 .skills h2,
@@ -1368,6 +1386,9 @@ button:focus {
   color: #fff;
   text-align: center;
   padding: 10em 2em;
+}
+.footer a {
+  color: #fff;
 }
 .footer .footer__emaillink {
   position: relative;

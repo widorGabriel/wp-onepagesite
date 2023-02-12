@@ -43,6 +43,9 @@ function add_specific_menu_location_atts( $atts, $item, $args ) {
 		if ( 101 === $item->ID ) { // the ID of your menu item.
 			$atts['data-stp-fastscroll-cmd'] ="contact";
 		}
+		if ( 127 === $item->ID ) { // the ID of your menu item.
+			$atts['title'] = 'Gabriel Calvo profile';
+		}
 	}
 	return $atts;
 }
