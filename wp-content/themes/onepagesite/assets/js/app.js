@@ -79,49 +79,43 @@ function menuResponsive() {
 
 /* } */
 
+/* function currentSection() {
+	let links = document.querySelectorAll('.menu li');
+	let sections = document.querySelectorAll('.container section');
+	let activeSection = null;
+	let activeLink = null;
+			for (let i = 0; i < sections.length; i++) {
+		let sectionTop = sections[i].getBoundingClientRect().top;
+		if(sectionTop < 45 && sectionTop > -55 ) {
+			console.log("Section " + i +": " + sectionTop);
+			if(i === 0) {
+				for (let y = 0; y < links.length; y++) {
+					links[y].classList.remove('currentlink');
+				}
+				links[2].classList.add('currentlink');
+			} else if(i === 1) {
+				for (let y = 0; y < links.length; y++) {
+					links[y].classList.remove('currentlink');
+				}
+				links[3].classList.add('currentlink');
+			} else if(i === 2) {
+				for (let y = 0; y < links.length; y++) {
+					links[y].classList.remove('currentlink');
+				}
+				links[4].classList.add('currentlink');
+			} else if(i === 3) {
+				for (let y = 0; y < links.length; y++) {
+					links[y].classList.remove('currentlink');
+				}
+				links[5].classList.add('currentlink');
+			}
+		}
+	}
+} */
 
-function currentSection() {
-  var links = document.querySelectorAll('.menu li');
-  var sections = document.querySelectorAll('.container section');
-  var activeSection = null;
-  var activeLink = null;
+/* currentSection(); */
+//Listener for showing to top button
 
-  for (var i = 0; i < sections.length; i++) {
-    var sectionTop = sections[i].getBoundingClientRect().top;
-
-    if (sectionTop < 45 && sectionTop > -55) {
-      console.log("Section " + i + ": " + sectionTop);
-
-      if (i === 0) {
-        for (var y = 0; y < links.length; y++) {
-          links[y].classList.remove('currentlink');
-        }
-
-        links[2].classList.add('currentlink');
-      } else if (i === 1) {
-        for (var _y = 0; _y < links.length; _y++) {
-          links[_y].classList.remove('currentlink');
-        }
-
-        links[3].classList.add('currentlink');
-      } else if (i === 2) {
-        for (var _y2 = 0; _y2 < links.length; _y2++) {
-          links[_y2].classList.remove('currentlink');
-        }
-
-        links[4].classList.add('currentlink');
-      } else if (i === 3) {
-        for (var _y3 = 0; _y3 < links.length; _y3++) {
-          links[_y3].classList.remove('currentlink');
-        }
-
-        links[5].classList.add('currentlink');
-      }
-    }
-  }
-}
-
-currentSection(); //Listener for showing to top button
 
 function showTopButton() {
   var topButton = document.querySelector('.footer__topbtn').classList;
@@ -146,13 +140,13 @@ anchors.forEach(function (anchor) {
 }); //Listener to detect window scroll
 
 window.onscroll = function () {
-  currentSection();
+  /* currentSection(); */
   showTopButton();
 }; //Listener to detect when user resizes the window
 
 
 window.onresize = function () {
-  currentSection();
+  /* currentSection(); */
   showTopButton();
 };
 
